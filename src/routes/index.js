@@ -1,4 +1,5 @@
 const express = require("express")
+const userRouter = require("./api/users")
 
 const router = express.Router({ mergeParams: true })
 
@@ -12,5 +13,7 @@ router.use((req, res, next) => {
    }
    next()
 })
+
+router.use("/users", userRouter)
 
 module.exports = router
