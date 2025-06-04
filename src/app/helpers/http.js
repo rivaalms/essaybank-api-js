@@ -6,7 +6,7 @@ module.exports = {
             error: error ?? "",
             message: message ?? "",
          },
-         data: data
+         data: data ?? null
       }
    },
    async paginate(model, page = 1, perPage = 10) {

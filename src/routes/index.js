@@ -1,5 +1,6 @@
 const express = require("express")
 const { parseResponse } = require("../app/helpers/http")
+const authRouter = require("./api/auth")
 const userRouter = require("./api/users")
 const questionRouter = require("./api/questions")
 const responseRouter = require("./api/responses")
@@ -18,6 +19,7 @@ router.use((req, res, next) => {
    next()
 })
 
+router.use("/auth", authRouter)
 router.use("/users", userRouter)
 router.use("/questions", questionRouter)
 router.use("/responses", responseRouter)
