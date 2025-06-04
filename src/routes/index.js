@@ -3,6 +3,7 @@ const { parseResponse } = require("../app/helpers/http")
 const userRouter = require("./api/users")
 const questionRouter = require("./api/questions")
 const responseRouter = require("./api/responses")
+const reviewRouter = require("./api/reviews")
 
 const router = express.Router({ mergeParams: true })
 
@@ -20,5 +21,6 @@ router.use((req, res, next) => {
 router.use("/users", userRouter)
 router.use("/questions", questionRouter)
 router.use("/responses", responseRouter)
+router.use("/reviews", reviewRouter)
 
 module.exports = router
