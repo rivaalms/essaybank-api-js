@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
        */
       static associate(models) {
          this.hasMany(models.Review, { foreignKey: "reviewerId" })
+         this.hasMany(models.AccessToken, { foreignKey: "userId" })
       }
    }
    User.init(
