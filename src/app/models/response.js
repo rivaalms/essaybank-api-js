@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
          },
          identifier: {
-            unique: true,
             type: DataTypes.STRING,
          },
          responseText: {
