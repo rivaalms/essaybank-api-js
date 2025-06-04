@@ -1,0 +1,29 @@
+{
+  "name": "essaybak-api-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "engines": {
+    "node": "^20",
+    "pnpm": "^10"
+  },
+  "scripts": {
+    "dev": "pnpm dlx nodemon src/index.js -w ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "devDependencies": {
+    "dotenv": "^16.5.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "sequelize-cli": "^6.6.3"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7"
+  }
+}
