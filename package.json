@@ -8,13 +8,15 @@
     "pnpm": "^10"
   },
   "scripts": {
-    "dev": "pnpm dlx nodemon src/index.js -w ./src"
+    "dev": "pnpm dlx nodemon src/index.js -w ./src",
+    "sequelize": "pnpm dlx sequelize-cli"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.11.0",
   "devDependencies": {
+    "@faker-js/faker": "^9.8.0",
     "dotenv": "^16.5.0",
     "nodemon": "^3.1.10",
     "prettier": "^3.5.3",
