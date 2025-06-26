@@ -7,7 +7,22 @@ module.exports = {
       res.json(parseResponse({ data }))
    },
    async find(req, res) {
-      const data = await Review.findByPk(req.params.id)
+      const data = await Review.findByPk(
+         req.params.id,
+         {
+            include: [
+               {
+                  association: "Response",
+                  include: {
+                     association: "Question"
+                  }
+               },
+               {
+                  association: "User",
+               }
+            ]
+         }
+      )
       res.json(parseResponse({ data }))
    },
    async create(req, res) {

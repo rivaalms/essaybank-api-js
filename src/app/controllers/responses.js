@@ -3,11 +3,11 @@ const { Response } = require("../models")
 
 module.exports = {
    async get(req, res) {
-      const data = await paginate(Response, req.query.page, req.query.perPage)
+      const data = await paginate(Response, req.query.page, req.query.perPage, { include: 'Question' })
       res.json(parseResponse({ data }))
    },
    async find(req, res) {
-      const data = await Response.findByPk(req.params.id)
+      const data = await Response.findByPk(req.params.id, { include: 'Question' })
       res.json(parseResponse({ data }))
    },
    async create(req, res) {
