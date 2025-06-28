@@ -16,8 +16,9 @@
    "production": {
       "username": "root",
       "password": null,
-      "database": "database_production",
+      "database": "essaybank",
       "host": "127.0.0.1",
+      "port": "3310",
       "dialect": "mysql"
    }
 }
