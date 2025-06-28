@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "pnpm dlx nodemon src/index.js -w ./src",
+    "start": "node src/index.js",
     "sequelize": "pnpm dlx sequelize-cli"
   },
   "keywords": [],
