@@ -5,11 +5,16 @@ const userRouter = require("./api/users")
 const questionRouter = require("./api/questions")
 const responseRouter = require("./api/responses")
 const reviewRouter = require("./api/reviews")
+const cors = require('cors')
 
 const router = express.Router({ mergeParams: true })
 
 router.use(express.json())
 router.use(express.urlencoded({ extended: true }))
+
+router.use(cors({
+   origin: "http://localhost:3000",
+}))
 
 router.use((req, res, next) => {
    if (req.header("accept") !== "application/json") {

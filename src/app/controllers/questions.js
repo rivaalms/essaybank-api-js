@@ -5,10 +5,18 @@ const crypt = require("../helpers/crypt")
 module.exports = {
    async get(req, res) {
       const data = await paginate(Question, req.query.page, req.query.perPage)
+      if (!req.headers.authorization) {
+         data.data.forEach((item) => {
+            delete item.dataValues.referenceAnswer
+         })
+      }
       res.json(parseResponse({ data }))
    },
    async find(req, res) {
       const data = await Question.findByPk(req.params.id)
+      if (!req.headers.authorization) {
+         delete data.dataValues.referenceAnswer
+      }
       res.json(parseResponse({ data }))
    },
    async create(req, res) {

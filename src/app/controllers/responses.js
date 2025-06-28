@@ -3,7 +3,17 @@ const { Response } = require("../models")
 
 module.exports = {
    async get(req, res) {
-      const data = await paginate(Response, req.query.page, req.query.perPage, { include: 'Question' })
+      const opts = {
+         include: 'Question'
+      }
+
+      if (req.headers.identifier && !req.headers.authorization) {
+         opts.where = {
+            identifier: req.headers.identifier
+         }
+      }
+
+      const data = await paginate(Response, req.query.page, req.query.perPage, opts)
       res.json(parseResponse({ data }))
    },
    async find(req, res) {
