@@ -24,7 +24,7 @@ module.exports = {
       const payload = {
          questionId: req.body.questionId,
          responseText: req.body.responseText,
-         identifier: req.ip,
+         identifier: req.body.ip || req.ip,
       }
 
       try {
