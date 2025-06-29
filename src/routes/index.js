@@ -13,7 +13,18 @@ router.use(express.json())
 router.use(express.urlencoded({ extended: true }))
 
 router.use(cors({
-   origin: "http://localhost:3000",
+   origin: (origin, callback) => {
+      const allowedOrigins = [
+         'http://localhost:3000',
+         'http://127.0.0.1:3088'
+      ]
+      if (!origin) return callback(null, true)
+      if (allowedOrigins.includes(origin)) {
+         callback(null, true)
+      } else {
+         callback(new Error("Not allowed by CORS"))
+      }
+   }
 }))
 
 router.use((req, res, next) => {
