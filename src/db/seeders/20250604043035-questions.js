@@ -1,16 +1,13 @@
 "use strict"
-const faker = require("../../app/helpers/faker")
+let data = require("./.data/questions.json")
 
-const data = []
-
-for (let i = 0; i < 10; i++) {
-   data.push({
-      questionText: faker.lorem.sentence(),
-      referenceAnswer: faker.lorem.sentence(),
+data = data.map((item) => {
+   return {
+      ...item,
       createdAt: new Date(),
       updatedAt: new Date(),
-   })
-}
+   }
+})
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
