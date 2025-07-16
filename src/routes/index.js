@@ -16,7 +16,7 @@ router.use(cors({
    origin: (origin, callback) => {
       const allowedOrigins = [
          'http://localhost:3000',
-         'http://103.63.24.166:3088'
+         'http://173.212.252.185:3088'
       ]
       if (!origin) return callback(null, true)
       if (allowedOrigins.includes(origin)) {
