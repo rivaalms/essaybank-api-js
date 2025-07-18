@@ -1,20 +1,41 @@
 const { paginate, parseResponse } = require("../helpers/http")
 const { Question } = require("../models")
-const crypt = require("../helpers/crypt")
+const { Op } = require("sequelize")
+const { validateToken } = require("../helpers/http")
 
 module.exports = {
    async get(req, res) {
-      const data = await paginate(Question, req.query.page, req.query.perPage)
-      if (!req.headers.authorization) {
+      let where = {}
+      if (req.query.search && req.query.search.length > 0) {
+         where = {
+            questionText: {
+               [Op.like]: `%${req.query.search}%`,
+            },
+         }
+      }
+
+      const data = await paginate(Question, req.query.page, req.query.perPage, {
+         where,
+      })
+
+      // NOTE - If the user is not authenticated, we should not return the referenceAnswer
+      if (
+         !req.headers.authorization ||
+         !(await validateToken(req.headers.authorization.split(" ")[1]))
+      ) {
          data.data.forEach((item) => {
             delete item.dataValues.referenceAnswer
          })
       }
+
       res.json(parseResponse({ data }))
    },
    async find(req, res) {
       const data = await Question.findByPk(req.params.id)
-      if (!req.headers.authorization) {
+      if (
+         !req.headers.authorization ||
+         !(await validateToken(req.headers.authorization.split(" ")[1]))
+      ) {
          delete data.dataValues.referenceAnswer
       }
       res.json(parseResponse({ data }))
