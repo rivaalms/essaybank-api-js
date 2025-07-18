@@ -33,7 +33,13 @@ module.exports = {
 
             res.json(
                parseResponse({
-                  data: { user, token: result.getDataValue("token") },
+                  data: {
+                     user,
+                     token: {
+                        value: result.getDataValue("token"),
+                        expiredAt: result.getDataValue("expiredAt"),
+                     },
+                  },
                   message: "Login successful",
                })
             )
