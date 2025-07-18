@@ -37,7 +37,7 @@ module.exports = {
                      user,
                      token: {
                         value: result.getDataValue("token"),
-                        expiredAt: result.getDataValue("expiredAt"),
+                        expiresAt: result.getDataValue("expiresAt"),
                      },
                   },
                   message: "Login successful",
