@@ -1,5 +1,6 @@
 const { parseResponse } = require("../../app/helpers/http")
 const { AccessToken } = require("../../app/models")
+const { validateToken } = require("../../app/helpers/http")
 
 module.exports = async (req, res, next) => {
    try {
@@ -12,8 +13,8 @@ module.exports = async (req, res, next) => {
          res.status(401).json(parseResponse({ error: "Unauthorized" }))
          return
       }
-      const storedToken = await AccessToken.findOne({ where: { token } })
-      if (!storedToken || storedToken.getDataValue("expiresAt") < new Date()) {
+      const isTokenValid = await validateToken(token)
+      if (!isTokenValid) {
          res.status(401).json(parseResponse({ error: "Unauthorized" }))
          return
       }

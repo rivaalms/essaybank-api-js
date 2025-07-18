@@ -1,3 +1,5 @@
+const { AccessToken } = require("../models")
+
 module.exports = {
    parseResponse({ data, message, error }) {
       return {
@@ -31,4 +33,16 @@ module.exports = {
          throw new Error("Failed to paginate data")
       }
    },
+   async validateToken(token) {
+      try {
+         const storedToken = await AccessToken.findOne({ where: { token } })
+         if (!storedToken || storedToken.getDataValue("expiresAt") < new Date()) {
+            return false
+         }
+         return true
+      } catch (e) {
+         console.error("Token validation error:", e)
+         throw new Error("Failed to validate token")
+      }
+   }
 }
