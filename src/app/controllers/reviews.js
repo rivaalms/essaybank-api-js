@@ -3,26 +3,36 @@ const { Review } = require("../models")
 
 module.exports = {
    async get(req, res) {
-      const data = await paginate(Review, req.query.page, req.query.perPage)
+      let where = {}
+      if (req.query.responseId) {
+         where = {
+            responseId: req.query.responseId,
+         }
+      }
+      const data = await paginate(Review, req.query.page, req.query.perPage, {
+         where,
+         include: [
+            {
+               association: "User",
+            },
+         ],
+      })
       res.json(parseResponse({ data }))
    },
    async find(req, res) {
-      const data = await Review.findByPk(
-         req.params.id,
-         {
-            include: [
-               {
-                  association: "Response",
-                  include: {
-                     association: "Question"
-                  }
+      const data = await Review.findByPk(req.params.id, {
+         include: [
+            {
+               association: "Response",
+               include: {
+                  association: "Question",
                },
-               {
-                  association: "User",
-               }
-            ]
-         }
-      )
+            },
+            {
+               association: "User",
+            },
+         ],
+      })
       res.json(parseResponse({ data }))
    },
    async create(req, res) {
