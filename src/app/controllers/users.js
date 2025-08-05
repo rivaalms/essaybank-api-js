@@ -1,7 +1,7 @@
 const { paginate, parseResponse } = require("../helpers/http")
 const { User } = require("../models")
 const crypt = require("../helpers/crypt")
-import { Op } from "sequelize"
+const { Op } = require("sequelize")
 
 module.exports = {
    async get(req, res) {
