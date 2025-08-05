@@ -5,6 +5,7 @@ const userRouter = require("./api/users")
 const questionRouter = require("./api/questions")
 const responseRouter = require("./api/responses")
 const reviewRouter = require("./api/reviews")
+const dashboardRouter = require("./api/dashboard")
 const cors = require('cors')
 
 const router = express.Router({ mergeParams: true })
@@ -40,5 +41,6 @@ router.use("/users", userRouter)
 router.use("/questions", questionRouter)
 router.use("/responses", responseRouter)
 router.use("/reviews", reviewRouter)
+router.use("/dashboards", dashboardRouter)
 
 module.exports = router
