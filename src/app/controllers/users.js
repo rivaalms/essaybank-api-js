@@ -1,10 +1,27 @@
 const { paginate, parseResponse } = require("../helpers/http")
 const { User } = require("../models")
 const crypt = require("../helpers/crypt")
+import { Op } from "sequelize"
 
 module.exports = {
    async get(req, res) {
-      const data = await paginate(User, req.query.page, req.query.perPage)
+      let where = {}
+      if (req.query.search && req.query.search.length > 0) {
+         where = {
+            [Op.or]: {
+               name: {
+                  [Op.like]: `%${req.query.search}%`,
+               },
+               email: {
+                  [Op.like]: `%${req.query.search}%`,
+               }
+            }
+         }
+      }
+
+      const data = await paginate(User, req.query.page, req.query.perPage, {
+         where
+      })
       res.json(parseResponse({ data }))
    },
    async find(req, res) {
