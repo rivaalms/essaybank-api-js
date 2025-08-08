@@ -10,7 +10,7 @@ module.exports = {
          })
          if (!user) {
             res.status(401).json(
-               resolveResponse({
+               parseResponse({
                   error: "Your credentials does not match our records",
                })
             )
