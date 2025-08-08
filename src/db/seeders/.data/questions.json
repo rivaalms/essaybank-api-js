@@ -1,22 +1,52 @@
 [
    {
-      "questionText": "Mengapa penting bagi kita untuk menjaga kebersihan lingkungan di sekitar rumah dan sekolah? Jelaskan pendapatmu.",
-      "referenceAnswer": "Menjaga kebersihan lingkungan penting agar kita terhindar dari penyakit yang disebabkan oleh sampah dan kotoran. Selain itu, lingkungan yang bersih juga membuat suasana belajar dan hidup menjadi lebih nyaman dan menyenangkan."
+      "questionText": "Jelaskan dengan singkat tujuan utama dibentuknya ASEAN.",
+      "referenceAnswer": "ASEAN dibentuk untuk mempererat kerja sama antarnegara Asia Tenggara di bidang politik, ekonomi, sosial, dan budaya.",
+      "keywords": ["kerja sama", "Asia Tenggara", "politik", "ekonomi", "sosial", "budaya"]
    },
    {
-      "questionText": "Mengapa kita disarankan untuk makan makanan bergizi dan berolahraga secara teratur? Jelaskan manfaatnya untuk tubuh kita.",
-      "referenceAnswer": "Makan makanan bergizi dan berolahraga secara teratur membantu tubuh tetap sehat, kuat, dan tidak mudah sakit. Gizi yang baik memberi energi untuk belajar dan beraktivitas, sedangkan olahraga menjaga kebugaran tubuh dan memperkuat daya tahan."
+      "questionText": "Mengapa dalam paragraf harus ada kalimat utama?",
+      "referenceAnswer": "Kalimat utama dalam paragraf penting karena menjadi inti atau gagasan pokok yang menjelaskan keseluruhan isi paragraf.",
+      "keywords": ["inti", "gagasan pokok", "paragraf"]
    },
    {
-      "questionText": "Menurutmu, apa keuntungan dan kerugian dari penggunaan gadget oleh anak-anak seusiamu? Berikan penjelasan dan contoh sederhana.",
-      "referenceAnswer": "Keuntungan dari penggunaan gadget adalah kita bisa belajar hal-hal baru, seperti menonton video edukasi atau bermain game yang melatih otak. Namun, jika digunakan terlalu lama, gadget bisa membuat mata lelah dan mengganggu waktu belajar atau tidur."
+      "questionText": "Jelaskan dengan singkat proses fotosintesis pada tumbuhan. Sertakan komponen apa saja yang terlibat dalam proses fotosintesis.",
+      "referenceAnswer": "Fotosintesis adalah proses tumbuhan hijau membuat makanan dengan memanfaatkan cahaya matahari, air, dan karbon dioksida menghasilkan glukosa dan oksigen.",
+      "keywords": ["membuat makanan", "matahari", "air", "karbon dioksida", "glukosa", "oksigen"]
    },
    {
-      "questionText": "Apa yang terjadi jika satu jenis hewan punah dari suatu lingkungan? Jelaskan pengaruhnya terhadap keseimbangan alam.",
-      "referenceAnswer": "Jika satu jenis hewan punah, rantai makanan bisa terganggu karena hewan lain mungkin kehilangan sumber makanan atau menjadi terlalu banyak jumlahnya. Hal ini dapat merusak keseimbangan ekosistem dan membuat lingkungan menjadi tidak stabil."
+      "questionText": "Mengapa Indonesia dijuluki sebagai negara maritim?",
+      "referenceAnswer": "Karena wilayah Indonesia sebagian besar terdiri dari lautan dan memiliki banyak pulau.",
+      "keywords": ["lautan", "pulau"]
    },
    {
-      "questionText": "Mengapa kita perlu mencuci tangan sebelum makan?",
-      "referenceAnswer": "Kita perlu mencuci tangan sebelum makan agar kuman dan bakteri yang menempel di tangan tidak masuk ke dalam tubuh. Hal ini penting untuk mencegah sakit perut, diare, dan penyakit lain yang disebabkan oleh kotoran atau virus."
+      "questionText": "Apa arti dari semboyan Bhinneka Tunggal Ika?",
+      "referenceAnswer": "Berbeda-beda tapi tetap satu kesatuan",
+      "keywords": ["beda", "tapi", "satu"]
+   },
+   {
+      "questionText": "Apa yang dimaksud dengan nomaden?",
+      "referenceAnswer": "Nomaden adalah gaya hidup berpindah-pindah tempat secara terus-menerus, tanpa menetap di satu tempat dalam jangka waktu lama.",
+      "keywords": ["pindah", "tempat"]
+   },
+   {
+      "questionText": "Apa fungsi utama lambung dalam sistem pencernaan?",
+      "referenceAnswer": "Lambung berfungsi untuk mencerna makanan secara kimiawi dan mekanis.",
+      "keywords": ["mencerna", "kimiawi", "mekanis"]
+   },
+   {
+      "questionText": "Kenapa golongan pemuda berusaha meyakinkan Bung Karno untuk segera memproklamasikan kemerdekaan Indonesia ketika berada di Rengasdengklok?",
+      "referenceAnswer": "Karena pada saat itu terjadi kekosongan kekuasaan setelah Jepang menyerah tanpa syarat kepada sekutu.",
+      "keywords": ["kekosongan", "kekuasaan", "Jepang", "menyerah"]
+   },
+   {
+      "questionText": "Mengapa Indonesia hanya memiliki dua musim, yaitu musim hujan dan musim kemarau?",
+      "referenceAnswer": "Karena letak geografis Indonesia berada di wilayah tropis dekat garis khatulistiwa, sehingga menerima sinar matahari relatif merata sepanjang tahun dan menyebabkan hanya ada dua musim, yaitu musim hujan dan musim kemarau.",
+      "keywords": ["tropis", "khatulistiwa", "matahari"]
+   },
+   {
+      "questionText": "Mengapa Jepang menyerah tanpa syarat kepada sekutu pada tanggal 15 Agustus 1945?",
+      "referenceAnswer": "Karena terjadi pengeboman yang dilakukan oleh Amerika di Hiroshima dan Nagasaki",
+      "keywords": ["pengeboman", "Amerika", "Hiroshima", "Nagasaki"]
    }
 ]
