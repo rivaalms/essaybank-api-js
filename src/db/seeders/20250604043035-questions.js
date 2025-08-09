@@ -2,8 +2,9 @@
 let data = require("./.data/questions.json")
 
 data = data.map((item) => {
+   const { keywords, ...rest } = item
    return {
-      ...item,
+      ...rest,
       createdAt: new Date(),
       updatedAt: new Date(),
    }
