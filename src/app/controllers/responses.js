@@ -1,23 +1,51 @@
 const { paginate, parseResponse } = require("../helpers/http")
 const { Response } = require("../models")
+const { fn, col, literal } = require("sequelize")
 
 module.exports = {
    async get(req, res) {
       const opts = {
-         include: 'Question'
+         include: "Question",
+         attributes: {
+            include: [
+               [
+                  literal(
+                     `EXISTS (SELECT 1 from Reviews WHERE Reviews.responseId = Response.id)`
+                  ),
+                  "hasReview",
+               ],
+            ],
+         },
       }
 
       if (req.headers.identifier && !req.headers.authorization) {
          opts.where = {
-            identifier: req.headers.identifier
+            identifier: req.headers.identifier,
          }
       }
 
-      const data = await paginate(Response, req.query.page, req.query.perPage, opts)
+      const data = await paginate(
+         Response,
+         req.query.page,
+         req.query.perPage,
+         opts
+      )
       res.json(parseResponse({ data }))
    },
    async find(req, res) {
-      const data = await Response.findByPk(req.params.id, { include: 'Question' })
+      const data = await Response.findByPk(req.params.id, {
+         include: "Question",
+         attributes: {
+            include: [
+               [
+                  literal(
+                     `EXISTS (SELECT 1 from Reviews WHERE Reviews.responseId = Response.id)`
+                  ),
+                  "hasReview",
+               ],
+            ],
+         },
+      })
       res.json(parseResponse({ data }))
    },
    async create(req, res) {
