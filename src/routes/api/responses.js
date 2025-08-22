@@ -8,6 +8,7 @@ router.get("/", controller.get)
 router.get("/:id", controller.find)
 router.post("/", controller.create)
 router.put("/:id", controller.update)
+router.patch("/:id/flag", controller.flag)
 router.use(authMiddleware)
 router.delete("/:id", controller.destroy)
 
