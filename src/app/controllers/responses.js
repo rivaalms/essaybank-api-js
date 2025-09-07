@@ -54,7 +54,8 @@ module.exports = {
       const payload = {
          questionId: req.body.questionId,
          responseText: req.body.responseText,
-         identifier: req.body.ip || req.ip,
+         identifier: req.body.identifier || req.identifier,
+         flagged: false
       }
 
       try {
@@ -80,6 +81,7 @@ module.exports = {
       const payload = {
          questionId: req.body.questionId,
          responseText: req.body.responseText,
+         flagged: req.body.flagged ?? false
       }
 
       try {
