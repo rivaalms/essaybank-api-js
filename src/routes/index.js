@@ -17,7 +17,8 @@ router.use(cors({
    origin: (origin, callback) => {
       const allowedOrigins = [
          'http://localhost:3000',
-         'http://173.212.252.185:3088'
+         'http://173.212.252.185:3088',
+         'https://api-essaybank.tukangit.cloud'
       ]
       if (!origin) return callback(null, true)
       if (allowedOrigins.includes(origin)) {
